@@ -1,0 +1,8 @@
+{
+    "layer": [
+        {"input": 784, "output": 512, "activator": "relu"},
+        {"input": 512, "output": 256, "activator": "relu"},
+        {"input": 256, "output": 128, "activator": "relu"},
+        {"input": 128, "output": 10, "activator": "softmax"}
+    ]
+}
