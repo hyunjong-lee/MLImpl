@@ -16,13 +16,18 @@ layers = [
 ]
 
 
-dataset = np.genfromtxt('./dataset/train.csv', delimiter=',', skip_header=1)
-
+dataset = np.genfromtxt('./dataset/train.csv', delimiter=',', skip_header=1, dtype=int)
+X = dataset[:,1:]
+truth = dataset[:,:1]
 # data 60000x784
 
+print(len(truth))
+print(truth[0])
+print(type(truth[0]))
+
 # X = np.asarray([np.frombuffer(t, dtype=np.uint8) for t in reader.data])
-# y = np.zeros((len(reader.labels), 10))
-# y[np.arange(len(reader.labels)), reader.labels] = 1
+y = np.zeros((len(truth), 10))
+y[np.arange(len(truth)), truth] = 1
 _iter = 5
 learing_rate = 0.0002
 
