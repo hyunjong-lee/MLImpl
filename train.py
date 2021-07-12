@@ -26,6 +26,7 @@ print(truth[0])
 print(type(truth[0]))
 
 # X = np.asarray([np.frombuffer(t, dtype=np.uint8) for t in reader.data])
+X = X / 255.0
 y = np.zeros((len(truth), 10))
 y[np.arange(len(truth)), truth] = 1
 _iter = 5
